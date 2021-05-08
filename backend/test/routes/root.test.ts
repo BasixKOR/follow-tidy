@@ -1,5 +1,5 @@
-import {test} from 'tap';
-import {build} from '../helper';
+import { test } from 'tap';
+import { build } from '../helper';
 
 test('default root route', async (t) => {
 	const app = await build(t);
@@ -7,5 +7,5 @@ test('default root route', async (t) => {
 	const res = await app.inject({
 		url: '/'
 	});
-	t.deepEqual(JSON.parse(res.payload), {root: true});
+	t.deepEqual(JSON.parse(res.payload), { root: true });
 });
