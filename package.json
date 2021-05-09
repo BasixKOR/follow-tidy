@@ -11,7 +11,8 @@
     "frontend"
   ],
   "scripts": {
-    "lint": "xo"
+    "lint": "xo",
+    "dev": "yarn workspaces foreach -pi run dev"
   },
   "devDependencies": {
     "prettier": "^2.2.1",
