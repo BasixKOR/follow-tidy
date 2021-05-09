@@ -1,5 +1,5 @@
 // This file contains code that we reuse between our tests.
-import Fastify from 'fastify';
+import fastify from 'fastify';
 import fp from 'fastify-plugin';
 import App from '../src/app';
 import * as tap from 'tap';
@@ -14,7 +14,7 @@ async function config() {
 
 // Automatically build and tear down our instance
 async function build(t: Test) {
-	const app = Fastify();
+	const app = fastify();
 
 	// Fastify-plugin ensures that all decorators
 	// are exposed for testing purposes, this is
@@ -24,7 +24,9 @@ async function build(t: Test) {
 	await app.ready();
 
 	// Tear down our app after we are done
-	t.tearDown(() => void app.close());
+	t.tearDown(() => {
+		app.close();
+	});
 
 	return app;
 }

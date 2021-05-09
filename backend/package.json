@@ -34,13 +34,8 @@
   },
   "xo": {
     "prettier": true,
-    "overrides": [
-      {
-        "files": "test/**/*.test.ts",
-        "rules": {
-          "@typescript-eslint/no-floating-promises": "off"
-        }
-      }
-    ]
+    "rules": {
+      "@typescript-eslint/no-floating-promises": "off"
+    }
   }
 }

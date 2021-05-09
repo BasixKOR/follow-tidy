@@ -1,7 +1,7 @@
 import { FastifyPluginAsync } from 'fastify';
 
-const root: FastifyPluginAsync = async (fastify, options): Promise<void> => {
-	fastify.get('/', async (request, reply) => {
+const root: FastifyPluginAsync = async (fastify): Promise<void> => {
+	fastify.get('/', async () => {
 		return { root: true };
 	});
 };
