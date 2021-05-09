@@ -9,26 +9,26 @@ export type Test = typeof tap['Test']['prototype'];
 // Fill in this config with all the configurations
 // needed for testing the application
 async function config() {
-	return {};
+  return {};
 }
 
 // Automatically build and tear down our instance
 async function build(t: Test) {
-	const app = fastify();
+  const app = fastify();
 
-	// Fastify-plugin ensures that all decorators
-	// are exposed for testing purposes, this is
-	// different from the production setup
-	void app.register(fp(App), await config());
+  // Fastify-plugin ensures that all decorators
+  // are exposed for testing purposes, this is
+  // different from the production setup
+  void app.register(fp(App), await config());
 
-	await app.ready();
+  await app.ready();
 
-	// Tear down our app after we are done
-	t.tearDown(() => {
-		app.close();
-	});
+  // Tear down our app after we are done
+  t.tearDown(() => {
+    app.close();
+  });
 
-	return app;
+  return app;
 }
 
 export { config, build };
