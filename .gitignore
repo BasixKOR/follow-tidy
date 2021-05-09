@@ -14,5 +14,5 @@ frontend/dist
 frontend/dist-ssr
 frontend/*.local
 
-# xo
 node_modules
+.env
