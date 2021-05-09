@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "lint --reporter compact",
+			"problemMatcher": [
+				"$eslint-compact",
+			],
+			"label": "npm: lint",
+			"detail": "xo"
+		}
+	]
+}
